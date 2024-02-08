@@ -7,7 +7,7 @@ using System.Web;
 
 namespace KidKinder.Context
 {
-    public class KidKinderContext
+    public class KidKinderContext:DbContext
     {
         public DbSet<About> Abouts { get; set; }
         public DbSet<AboutList> AboutLists { get; set; }
@@ -20,5 +20,6 @@ namespace KidKinder.Context
         public DbSet<Service> Services { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }
