@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KidKinder.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace KidKinder.Controllers
     public class DefaultController : Controller
     {
         // GET: Default
+        KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
             return View();
@@ -26,12 +28,14 @@ namespace KidKinder.Controllers
 
         public PartialViewResult FeaturePartial()
         {
-            return PartialView();
+            var values = kidKinderContext.Features.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult ServicePartial()
         {
-            return PartialView();
+            var values = kidKinderContext.Services.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult AboutPartial()
@@ -40,7 +44,8 @@ namespace KidKinder.Controllers
         }
         public PartialViewResult ClassRoomPartial()
         {
-            return PartialView();
+            var values = kidKinderContext.ClassRooms.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult BookASeatPartial()

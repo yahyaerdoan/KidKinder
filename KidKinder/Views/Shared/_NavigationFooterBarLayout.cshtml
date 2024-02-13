@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+@Html.Action("HeadPartial", "Default")
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_NavigationFooterBarLayout</title>
+</head>
+<body>
+    <!-- Navbar Start -->
+    @Html.Action("NavigationBarPartial", "Default")
+    <!-- Navbar End -->
+    @RenderBody()
+    <!-- Footer Start -->
+    @Html.Action("FooterPartial", "Default")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    @Html.Action("ScriptPartial", "Default")
+</body>
+</html>
