@@ -128,9 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
@@ -377,6 +379,9 @@
     <Content Include="Views\Default\ScriptPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationFooterBarLayout.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Header\HeaderPartial.cshtml" />
+    <Content Include="Views\Contact\ContactPartial.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
