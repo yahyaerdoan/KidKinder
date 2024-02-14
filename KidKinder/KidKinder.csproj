@@ -129,10 +129,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BookASeatController.cs" />
+    <Compile Include="Controllers\ClassRoomController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HeaderController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
@@ -382,6 +385,14 @@
     <Content Include="Views\Header\HeaderPartial.cshtml" />
     <Content Include="Views\Contact\ContactPartial.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\AboutPartial.cshtml" />
+    <Content Include="Views\ClassRoom\ClassRoomPartial.cshtml" />
+    <Content Include="Views\ClassRoom\Index.cshtml" />
+    <Content Include="Views\BookASeat\Index.cshtml" />
+    <Content Include="Views\BookASeat\BookASeatPartial.cshtml" />
+    <Content Include="Views\Teacher\TeacherPartial.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Header\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

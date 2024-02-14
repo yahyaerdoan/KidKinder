@@ -1,5 +1,4 @@
-﻿using KidKinder.Context;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,16 +6,15 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
-    public class AboutController : Controller
+    public class TeacherController : Controller
     {
-        // GET: About
-        KidKinderContext kidKinderContext = new KidKinderContext();
+        // GET: Teacher
         public ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult AboutPartial()
+        public PartialViewResult TeacherPartial()
         {
             return PartialView();
         }

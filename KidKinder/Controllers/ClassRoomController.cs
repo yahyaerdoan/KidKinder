@@ -7,16 +7,16 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers
 {
-    public class AboutController : Controller
+    public class ClassRoomController : Controller
     {
-        // GET: About
+        // GET: ClassRoom
         KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult AboutPartial()
+        public PartialViewResult ClassRoomPartial()
         {
             return PartialView();
         }
