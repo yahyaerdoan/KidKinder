@@ -131,6 +131,7 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BookASeatController.cs" />
     <Compile Include="Controllers\ClassRoomController.cs" />
+    <Compile Include="Controllers\CommunicationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -156,6 +157,7 @@
       <DependentUpon>202402081101581_Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -393,10 +395,11 @@
     <Content Include="Views\Teacher\TeacherPartial.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\Header\Index.cshtml" />
+    <Content Include="Views\Communication\CommunicationPartial.cshtml" />
+    <Content Include="Views\Shared\_ContactCommunicationLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
