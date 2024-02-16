@@ -136,7 +136,6 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HeaderController.cs" />
     <Compile Include="Controllers\TeacherAdminController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
@@ -980,7 +979,6 @@
     <Content Include="Views\Default\ScriptPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationFooterBarLayout.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Header\HeaderPartial.cshtml" />
     <Content Include="Views\Contact\ContactPartial.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\About\AboutPartial.cshtml" />
@@ -990,7 +988,6 @@
     <Content Include="Views\BookASeat\BookASeatPartial.cshtml" />
     <Content Include="Views\Teacher\TeacherPartial.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
-    <Content Include="Views\Header\Index.cshtml" />
     <Content Include="Views\Communication\CommunicationPartial.cshtml" />
     <Content Include="Views\Shared\_ContactCommunicationLayout.cshtml" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
@@ -1100,6 +1097,8 @@
     <Content Include="Views\AdminLayout\SideBarPartial.cshtml" />
     <Content Include="Views\AdminLayout\ScriptPartial.cshtml" />
     <Content Include="Views\TeacherAdmin\TeacherList.cshtml" />
+    <Content Include="Views\Default\HeaderPartial.cshtml" />
+    <Content Include="Views\About\AboutListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1120,6 +1119,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202402081101581_Admin.resx">
       <DependentUpon>202402081101581_Admin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402151125400_addNotification.resx">
       <DependentUpon>202402151125400_addNotification.cs</DependentUpon>

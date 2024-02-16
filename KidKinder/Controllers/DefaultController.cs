@@ -26,6 +26,11 @@ namespace KidKinder.Controllers
             return PartialView();
         }
 
+        public PartialViewResult HeaderPartial()
+        {
+            return PartialView();
+        }
+
         public PartialViewResult FeaturePartial()
         {
             var values = kidKinderContext.Features.ToList();

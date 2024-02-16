@@ -13,7 +13,6 @@ namespace KidKinder.Controllers
         KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
-            ViewData["Title"] = "Yahya";
             return View();
         }
         

@@ -20,5 +20,9 @@ namespace KidKinder.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult AboutListPartial()
+        {
+            return PartialView(kidKinderContext.AboutLists.ToList());
+        }
     }
 }

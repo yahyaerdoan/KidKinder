@@ -9,7 +9,6 @@
                          src="@item.BigImage"
                          alt="" />
                 </div>
-
                 <div class="col-lg-7">
                     <p class="section-title pr-5">
                         <span class="pr-2">Learn About Us</span>
@@ -22,28 +21,11 @@
                         <div class="col-6 col-md-4">
                             <img class="img-fluid rounded" src="@item.SmallImage" alt="" />
                         </div>
-                        <div class="col-6 col-md-8">
-                            <ul class="list-inline m-0">
-                                <li class="py-2 border-top border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Labore eos amet
-                                    dolor amet diam
-                                </li>
-                                <li class="py-2 border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Etsea et sit
-                                    dolor amet ipsum
-                                </li>
-                                <li class="py-2 border-bottom">
-                                    <i class="fa fa-check text-primary mr-3"></i>Diam dolor diam
-                                    elitripsum vero.
-                                </li>
-                            </ul>
-                        </div>
+                        @Html.Action("AboutListPartial","About")
                     </div>
                     <a href="" class="btn btn-primary mt-2 py-2 px-4">Learn More</a>
                 </div>
             }
-
-
         </div>
     </div>
 </div>
