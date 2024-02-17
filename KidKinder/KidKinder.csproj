@@ -162,6 +162,14 @@
     <Compile Include="Migrations\202402151125400_addNotification.designer.cs">
       <DependentUpon>202402151125400_addNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202402172012496_ClassRoomBookASeatRelation.cs" />
+    <Compile Include="Migrations\202402172012496_ClassRoomBookASeatRelation.designer.cs">
+      <DependentUpon>202402172012496_ClassRoomBookASeatRelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402172017012_ClassRoomBookASeatKey.cs" />
+    <Compile Include="Migrations\202402172017012_ClassRoomBookASeatKey.designer.cs">
+      <DependentUpon>202402172017012_ClassRoomBookASeatKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1099,6 +1107,8 @@
     <Content Include="Views\TeacherAdmin\TeacherList.cshtml" />
     <Content Include="Views\Default\HeaderPartial.cshtml" />
     <Content Include="Views\About\AboutListPartial.cshtml" />
+    <Content Include="Views\Default\AboutListPartial.cshtml" />
+    <Content Include="Views\Default\AboutDescriptionPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1123,6 +1133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402151125400_addNotification.resx">
       <DependentUpon>202402151125400_addNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402172012496_ClassRoomBookASeatRelation.resx">
+      <DependentUpon>202402172012496_ClassRoomBookASeatRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402172017012_ClassRoomBookASeatKey.resx">
+      <DependentUpon>202402172017012_ClassRoomBookASeatKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

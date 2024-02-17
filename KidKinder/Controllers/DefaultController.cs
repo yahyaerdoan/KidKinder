@@ -48,6 +48,20 @@ namespace KidKinder.Controllers
             var values = kidKinderContext.Abouts.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult AboutDescriptionPartial()
+        {
+            ViewBag.title = kidKinderContext.Abouts.Select(t => t.Title).FirstOrDefault();
+            ViewBag.description = kidKinderContext.Abouts.Select(d => d.Description).FirstOrDefault();           
+            return PartialView();
+        }
+        
+        public PartialViewResult AboutListPartial()
+        {
+            var values = kidKinderContext.AboutLists.ToList();
+            return PartialView(values);
+        }
+
         public PartialViewResult ClassRoomPartial()
         {
             var values = kidKinderContext.ClassRooms.ToList();
@@ -56,8 +70,8 @@ namespace KidKinder.Controllers
 
         public PartialViewResult BookASeatPartial()
         {
-            var values = kidKinderContext.BookASeats.ToList();
-            return PartialView(values);
+            //var values = kidKinderContext.BookASeats.ToList();
+            return PartialView();
         }
 
         public PartialViewResult TeacherPartial()
