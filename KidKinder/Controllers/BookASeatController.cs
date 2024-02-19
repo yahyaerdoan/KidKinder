@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,23 @@ namespace KidKinder.Controllers
     public class BookASeatController : Controller
     {
         // GET: BookASeat
-        KidKinderContext kinderContext = new KidKinderContext();
+        KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
             return View();
         }
-
+        
         public PartialViewResult BookASeatPartial()
-        {
-            //ViewBag.ClassRoomHeader = new SelectList(kinderContext.ClassRooms.ToList(), "ClassRoomId", "Header");
+        {       
             return PartialView();
+        } 
+        
+        [HttpPost]
+        public ActionResult AddBookNow(BookASeat bookASeat)
+        {
+            kidKinderContext.BookASeats.Add(bookASeat);
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("Index", "Default");
         }
     }
 }

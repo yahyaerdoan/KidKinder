@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace KidKinder.Controllers
 
         public PartialViewResult ServicePartial()
         {
-            var values = kidKinderContext.Services.ToList();
+            var values = kidKinderContext.Services.ToList();            
             return PartialView(values);
         }
 
@@ -70,7 +71,7 @@ namespace KidKinder.Controllers
 
         public PartialViewResult BookASeatPartial()
         {
-            //var values = kidKinderContext.BookASeats.ToList();
+            ViewBag.ClassRoomHeader = new SelectList(kidKinderContext.ClassRooms.ToList(), "ClassRoomId", "Header");
             return PartialView();
         }
 
