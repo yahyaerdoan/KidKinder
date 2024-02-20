@@ -4,48 +4,62 @@
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<!-- Hover table card start -->
-<div class="card">
-    <div class="card-header">
-        <h5>Teacher List</h5>        
-        <div class="card-header-right">
-            <ul class="list-unstyled card-option">
-                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                <li><i class="fa fa-window-maximize full-card"></i></li>
-                <li><i class="fa fa-minus minimize-card"></i></li>
-                <li><i class="fa fa-refresh reload-card"></i></li>
-                <li><i class="fa fa-trash close-card"></i></li>
-            </ul>
-        </div>
-    </div>
-    <div class="card-block table-border-style">
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="rowgroup">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Field Of Study</th>
-                        <th scope="col">Name - Surname</th>
-                        <th scope="col">Update</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                    <tr>
-                        <th scope="row">@item.TeacherId</th>
-                        <td>@item.Title</td>
-                        <td>@item.FieldOfStudy</td>
-                        <td>@item.Name @item.Surname</td>
-                        <td><a href="" type="button" class="btn btn-outline-success">Update</a></td>
-                        <td><a href="" type="button" class="btn btn-outline-danger">Remove</a></td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+<!-- Page-header end -->
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <!-- Hover table card start -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Teacher List</h5>
+                        <span>use class <code>table</code> inside table element</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="background-color:antiquewhite; color:black">
+                                        <th scope="rowgroup">#</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Field Of Study</th>
+                                        <th scope="col">Name - Surname</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.TeacherId</th>
+                                            <td>@item.Title</td>
+                                            <td>@item.FieldOfStudy</td>
+                                            <td>@item.Name @item.Surname</td>
+                                            <td><a href="/TeacherAdmin/UpdateTeacher/@item.TeacherId" type="button" class="btn btn-outline-success">Update</a></td>
+                                            <td><a href="/TeacherAdmin/DeleteTeacher/@item.TeacherId" type="button" class="btn btn-outline-danger">Remove</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>  
+                            <a href="/TeacherAdmin/CreateTeacher/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Teacher</a>      
+                        </div>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+            </div>
         </div>
     </div>
 </div>
-<!-- Hover table card end -->

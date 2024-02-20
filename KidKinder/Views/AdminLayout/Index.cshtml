@@ -19,7 +19,8 @@
                 <div class="pcoded-wrapper">
                     @Html.Action("SideBarPartial", "AdminLayout")
                     <div class="pcoded-content">
-                      @RenderBody()
+                        @Html.Action("HeaderPartial", "AdminLayout")
+                        @RenderBody()
                     </div>
                     <div id="styleSelector"></div>
                 </div>
