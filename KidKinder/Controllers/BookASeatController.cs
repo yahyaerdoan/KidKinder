@@ -26,7 +26,7 @@ namespace KidKinder.Controllers
         public ActionResult AddBookNow(BookASeat bookASeat)
         {
             kidKinderContext.BookASeats.Add(bookASeat);
-            kidKinderContext.SaveChanges();
+            kidKinderContext.SaveChanges();            
             return RedirectToAction("Index", "Default");
         }
     }
