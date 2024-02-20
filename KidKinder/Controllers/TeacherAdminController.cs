@@ -45,6 +45,7 @@ namespace KidKinder.Controllers
             var value = kidKinderContext.Teachers.Find(id);
             return View(value);
         }
+
         [HttpPost]
         public ActionResult UpdateTeacher(Teacher teacher)
         {

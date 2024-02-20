@@ -134,6 +134,7 @@
     <Compile Include="Controllers\ClassRoomController.cs" />
     <Compile Include="Controllers\CommunicationController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TeacherAdminController.cs" />
@@ -890,6 +891,7 @@
     <Content Include="Views\TeacherAdmin\CreateTeacher.cshtml" />
     <Content Include="Views\AdminLayout\HeaderPartial.cshtml" />
     <Content Include="Views\TeacherAdmin\UpdateTeacher.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
