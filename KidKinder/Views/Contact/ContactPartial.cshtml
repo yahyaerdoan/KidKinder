@@ -1,4 +1,5 @@
-﻿<!-- Header Start -->
+﻿@model KidKinder.Entities.Contact
+<!-- Header Start -->
 <div class="container-fluid pt-5">
     <div class="container">
         <div class="text-center pb-2">
@@ -11,47 +12,91 @@
             <div class="col-lg-7 mb-5">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                        <div class="control-group">
+                    <form method="post" action="/Contact/CreateContact">
+
+                        <div class="control-group" style="margin-bottom:1rem">
                             <input type="text"
                                    class="form-control"
                                    id="name"
-                                   placeholder="Your Name"
+                                   placeholder="Name"
                                    required="required"
-                                   data-validation-required-message="Please enter your name" />
-                            <p class="help-block text-danger"></p>
+                                   name="Name"/>
                         </div>
-                        <div class="control-group">
+                        <div class="control-group" style="margin-bottom:1rem">
+                            <input type="text"
+                                   class="form-control"
+                                   id="Surname"
+                                   placeholder="Surname"
+                                   required="required"
+                                   name="Surname"/>                            
+                        </div>
+                        <div class="control-group" style="margin-bottom:1rem">
                             <input type="email"
                                    class="form-control"
                                    id="email"
-                                   placeholder="Your Email"
+                                   placeholder="Email"
                                    required="required"
-                                   data-validation-required-message="Please enter your email" />
-                            <p class="help-block text-danger"></p>
+                                   name="Email"/>                            
                         </div>
-                        <div class="control-group">
+                        <div class="control-group" style="margin-bottom:1rem">
+                            <input type="text"
+                                   class="form-control"
+                                   id="title"
+                                   placeholder="Title"
+                                   required="required"
+                                   name="Title"/>                           
+                        </div>
+                        <div class="control-group" style="margin-bottom:1rem">
+                            <input type="text"
+                                   class="form-control"
+                                   id="header"
+                                   placeholder="Header"
+                                   required="required"
+                                   name="Header"/>                           
+                        </div>
+                        <div class="control-group" style="margin-bottom:1rem">
                             <input type="text"
                                    class="form-control"
                                    id="subject"
                                    placeholder="Subject"
                                    required="required"
-                                   data-validation-required-message="Please enter a subject" />
-                            <p class="help-block text-danger"></p>
+                                   name="Subject"/>                            
                         </div>
-                        <div class="control-group">
+                        <div class="control-group" style="margin-bottom:1rem">
+                            <textarea class="form-control"
+                                      rows="3"
+                                      id="description"
+                                      placeholder="Description"
+                                      required="required"
+                                      name="Description"></textarea>
+                        </div>
+                        <div class="control-group" style="margin-bottom:1rem">
                             <textarea class="form-control"
                                       rows="6"
                                       id="message"
                                       placeholder="Message"
                                       required="required"
-                                      data-validation-required-message="Please enter your message"></textarea>
-                            <p class="help-block text-danger"></p>
+                                      name="Message"></textarea>
                         </div>
+                        @*<div class="control-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="senddate"
+                                   placeholder="Send date"
+                                   required="required"
+                                   name="SendDate"/>                            
+                        </div>
+                        <div class="control-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="isread"
+                                   placeholder="Is read"
+                                   required="required"
+                                   name="IsRead"/>                            
+                        </div>*@
                         <div>
                             <button class="btn btn-primary py-2 px-4"
-                                    type="submit"
-                                    id="sendMessageButton">
+                                    type="submit">
                                 Send Message
                             </button>
                         </div>
