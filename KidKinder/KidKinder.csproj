@@ -143,6 +143,7 @@
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
     <Compile Include="Entities\BookASeat.cs" />
+    <Compile Include="Entities\Branch.cs" />
     <Compile Include="Entities\ClassRoom.cs" />
     <Compile Include="Entities\Communication.cs" />
     <Compile Include="Entities\Contact.cs" />
@@ -170,6 +171,18 @@
     <Compile Include="Migrations\202402172017012_ClassRoomBookASeatKey.cs" />
     <Compile Include="Migrations\202402172017012_ClassRoomBookASeatKey.designer.cs">
       <DependentUpon>202402172017012_ClassRoomBookASeatKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221059581_UpdateTitle.cs" />
+    <Compile Include="Migrations\202402221059581_UpdateTitle.designer.cs">
+      <DependentUpon>202402221059581_UpdateTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221105499_AddBranch.cs" />
+    <Compile Include="Migrations\202402221105499_AddBranch.designer.cs">
+      <DependentUpon>202402221105499_AddBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202402221114195_TeacherBranchRelation.cs" />
+    <Compile Include="Migrations\202402221114195_TeacherBranchRelation.designer.cs">
+      <DependentUpon>202402221114195_TeacherBranchRelation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SendMessageViewModel.cs" />
@@ -923,6 +936,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202402172017012_ClassRoomBookASeatKey.resx">
       <DependentUpon>202402172017012_ClassRoomBookASeatKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221059581_UpdateTitle.resx">
+      <DependentUpon>202402221059581_UpdateTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221105499_AddBranch.resx">
+      <DependentUpon>202402221105499_AddBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202402221114195_TeacherBranchRelation.resx">
+      <DependentUpon>202402221114195_TeacherBranchRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

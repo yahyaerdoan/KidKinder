@@ -1,4 +1,5 @@
-﻿@{
+﻿@model KidKinder.Entities.Teacher
+@{
     ViewBag.Title = "CreateTeacher";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
@@ -39,7 +40,8 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            @*<input type="text" class="form-control" placeholder="title" name="Title">*@
+                                            @Html.DropDownListFor(b => b.BranchId, (List<SelectListItem>)ViewBag.BranchName, new { @class = "form-control"})
                                         </div>
                                     </div>
 
@@ -52,7 +54,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Upload File</label>
                                         <div class="col-sm-10">
-                                            <input type="url" class="form-control" name="Image">
+                                            <input type="text" class="form-control" name="Image">
                                         </div>
                                     </div>
                                     <button class="btn btn-outline-success col-md-12">Create New Teacher</button>
