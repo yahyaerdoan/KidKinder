@@ -136,6 +136,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TeacherAdminController.cs" />
@@ -655,6 +656,10 @@
     <Content Include="Templates\material_able-main\material_able-main\tabs.html" />
     <Content Include="Templates\material_able-main\material_able-main\tooltip.html" />
     <Content Include="Templates\material_able-main\material_able-main\typography.html" />
+    <Content Include="Templates\Page404\css\style.css" />
+    <Content Include="Templates\Page404\img\bg.jpg" />
+    <Content Include="Templates\Page404\index.html" />
+    <Content Include="Templates\Page404\readme.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -906,11 +911,13 @@
     <Content Include="Views\AdminLayout\HeaderPartial.cshtml" />
     <Content Include="Views\TeacherAdmin\UpdateTeacher.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Login\AdminLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\Login\" />
+    <Folder Include="Views\LogOut\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

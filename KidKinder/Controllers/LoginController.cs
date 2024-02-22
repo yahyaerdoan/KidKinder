@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace KidKinder.Controllers
 {
@@ -12,10 +13,7 @@ namespace KidKinder.Controllers
     {
         // GET: Login
         KidKinderContext kidKinderContext = new KidKinderContext();
-        public ActionResult Index()
-        {
-            return View();
-        }
+       
         [HttpGet]
         public ActionResult AdminLogin()
         {
@@ -24,8 +22,17 @@ namespace KidKinder.Controllers
         [HttpPost]
         public ActionResult AdminLogin(Admin admin)
         {
-            //var result = kidKinderContext.Admins.FirstOrDefault(a => a.UserName == admin.UserName && b=>b.Password == admin.Password);
-            return View();
+            var result = kidKinderContext.Admins.FirstOrDefault(a => a.UserName == admin.UserName && a.Password == admin.Password);
+            if (result != null)
+            {
+                FormsAuthentication.SetAuthCookie(admin.UserName, true);
+                Session["UserName"] = result.UserName;
+                return RedirectToAction("TeacherList", "TeacherAdmin");
+            }
+            else
+            {
+                return View();
+            }           
         }
     }
 }
