@@ -54,15 +54,15 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
-                                            @*<input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Branch.Name">*@
-                                            @Html.DropDownListFor(b => b.BranchId, (List<SelectListItem>)ViewBag.BranchName, new { @class = "form-control" })
+                                            <input type="text" class="form-control" placeholder="title" name="FieldOfStudy" value="@Model.FieldOfStudy">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Field of Study</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="field of study" name="FieldOfStudy" value="@Model.FieldOfStudy">
+                                            @*<input type="text" class="form-control" placeholder="field of study" name="FieldOfStudy" value="@Model.FieldOfStudy">*@
+                                            @Html.DropDownListFor(b => b.BranchId, (List<SelectListItem>)ViewBag.BranchName, new { @class = "form-group; custom-select border-1" })
                                         </div>
                                     </div>
                                     <div class="form-group row">

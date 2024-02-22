@@ -21,13 +21,7 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult CreateTeacher()
         {
-            List<SelectListItem> values = (from item in kidKinderContext.Branches.ToList()
-                                           select new SelectListItem
-                                           {
-                                               Text = item.Name,
-                                               Value = item.BranchId.ToString()
-                                           }).ToList();
-            ViewBag.BranchName = values;
+            GetBranchListBySelectListItem();
             return View();
         }
         [HttpPost]
@@ -49,17 +43,11 @@ namespace KidKinder.Controllers
         [HttpGet]
         public ActionResult UpdateTeacher(int id)
         {
-          List<SelectListItem> values = (from item in kidKinderContext.Branches.ToList()
-                                           select new SelectListItem
-                                           {
-                                               Text = item.Name,
-                                               Value = item.BranchId.ToString()
-                                           }).ToList();
-            ViewBag.BranchName = values;
+            GetBranchListBySelectListItem();
             var value = kidKinderContext.Teachers.Find(id);
             return View(value);
         }
-
+        //[ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult UpdateTeacher(Teacher teacher)
         {
@@ -68,8 +56,25 @@ namespace KidKinder.Controllers
             value.Surname = teacher.Surname;
             value.BranchId = teacher.BranchId;
             value.FieldOfStudy = teacher.FieldOfStudy;
+            value.Image = teacher.Image;
             kidKinderContext.SaveChanges();
             return RedirectToAction("TeacherList");
         }
-    }
+
+        public void GetBranchListBySelectList()
+        {
+            ViewBag.BranchName = new SelectList(kidKinderContext.Branches.ToList(), "BranchId", "Name");
+        }
+
+        public void GetBranchListBySelectListItem()
+        {
+            List<SelectListItem> values = (from item in kidKinderContext.Branches.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = item.Name,
+                                               Value = item.BranchId.ToString()
+                                           }).ToList();
+            ViewBag.BranchName = values;
+        }
+    }   
 }
