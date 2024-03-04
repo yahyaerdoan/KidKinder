@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace KidKinder.Controllers
+namespace KidKinder.Controllers.AdminController
 {
     public class DashboardController : Controller
     {

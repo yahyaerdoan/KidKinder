@@ -128,19 +128,19 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\AdminLayoutController.cs" />
-    <Compile Include="Controllers\BookASeatController.cs" />
-    <Compile Include="Controllers\ClassRoomController.cs" />
-    <Compile Include="Controllers\CommunicationController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\ErrorPageController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\TeacherAdminController.cs" />
-    <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\DefaultViewController\AboutController.cs" />
+    <Compile Include="Controllers\AdminController\AboutAdminController.cs" />
+    <Compile Include="Controllers\AdminController\AdminLayoutController.cs" />
+    <Compile Include="Controllers\DefaultViewController\BookASeatController.cs" />
+    <Compile Include="Controllers\DefaultViewController\ClassRoomController.cs" />
+    <Compile Include="Controllers\DefaultViewController\CommunicationController.cs" />
+    <Compile Include="Controllers\DefaultViewController\ContactController.cs" />
+    <Compile Include="Controllers\AdminController\DashboardController.cs" />
+    <Compile Include="Controllers\DefaultViewController\DefaultController.cs" />
+    <Compile Include="Controllers\AdminController\ErrorPageController.cs" />
+    <Compile Include="Controllers\AdminController\LoginController.cs" />
+    <Compile Include="Controllers\AdminController\TeacherAdminController.cs" />
+    <Compile Include="Controllers\DefaultViewController\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
     <Compile Include="Entities\Admin.cs" />
@@ -917,6 +917,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\AboutAdmin\" />
     <Folder Include="Views\LogOut\" />
   </ItemGroup>
   <ItemGroup>

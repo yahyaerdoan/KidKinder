@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace KidKinder.Controllers
+namespace KidKinder.Controllers.AdminController
 {
     public class LoginController : Controller
     {

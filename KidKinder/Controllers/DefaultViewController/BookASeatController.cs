@@ -6,29 +6,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace KidKinder.Controllers
+namespace KidKinder.Controllers.DefaultViewController
 {
-    public class ContactController : Controller
+    public class BookASeatController : Controller
     {
-        // GET: Contact
+        // GET: BookASeat
         KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
             return View();
         }
         
-        public PartialViewResult ContactPartial()
-        {
+        public PartialViewResult BookASeatPartial()
+        {       
             return PartialView();
-        }
-
+        } 
+        
         [HttpPost]
-        public ActionResult CreateContact(Contact contact)
-        {   
-            var value = kidKinderContext.Contacts.Add(contact);
-            value.IsRead = false;
-            value.SendDate = DateTime.Now;
-            kidKinderContext.SaveChanges();
+        public ActionResult AddBookNow(BookASeat bookASeat)
+        {
+            kidKinderContext.BookASeats.Add(bookASeat);
+            kidKinderContext.SaveChanges();            
             return RedirectToAction("Index", "Default");
         }
     }

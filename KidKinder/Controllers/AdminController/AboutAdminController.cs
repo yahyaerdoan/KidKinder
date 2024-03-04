@@ -5,20 +5,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace KidKinder.Controllers
+namespace KidKinder.Controllers.AdminController
 {
-    public class ClassRoomController : Controller
+    public class AboutAdminController : Controller
     {
-        // GET: ClassRoom
+        // GET: AboutAdmin
         KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public PartialViewResult ClassRoomPartial()
-        {
-            return PartialView();
+            var values = kidKinderContext.Abouts.ToList();
+            return View(values);
         }
     }
 }
