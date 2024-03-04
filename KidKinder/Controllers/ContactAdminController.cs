@@ -5,15 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace KidKinder.Controllers.AdminController
+namespace KidKinder.Controllers
 {
-    public class AboutAdminController : Controller
+    public class ContactAdminController : Controller
     {
-        // GET: AboutAdmin
+        // GET: ContactAdmin
         KidKinderContext kidKinderContext = new KidKinderContext();
-        public ActionResult About()
+        public ActionResult ContactList()
         {
-            var values = kidKinderContext.Abouts.ToList();
+            var values = kidKinderContext.Contacts.ToList();
             return View(values);
         }
     }

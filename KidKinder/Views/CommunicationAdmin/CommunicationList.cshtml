@@ -1,0 +1,86 @@
+﻿@model List<KidKinder.Entities.Communication>
+@{
+    ViewBag.Title = "CommunicationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Communication List</h5>
+                        <span>use class <code>table</code> inside table element</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li>
+                                    <i class="fa fa fa-wrench open-card-option"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-window-maximize full-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-minus minimize-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-refresh reload-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-trash close-card"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="background-color:antiquewhite; color:black">
+                                        <th scope="rowgroup">#</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Header</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phoe</th>
+                                        <th scope="col">Day</th>
+                                        <th scope="col">Hour Am</th>
+                                        <th scope="col">Hour Pm</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.CommunicationId</th>
+                                            <td>@item.Title</td>
+                                            <td>@item.Header</td>
+                                            <td style="text-align:justify">@item.Descripction</td>
+                                            <td>@item.Address</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.Day</td>
+                                            <td>@item.OpeningHour</td>
+                                            <td>@item.Hour.ToString("hh:ss") Pm</td>
+                                            <td>
+                                                <a href="/CommunicationAdmin/UpdateCommunication/@item.CommunicationId" type="button" class="btn btn-outline-success">Update</a>
+                                            </td>
+                                            <td>
+                                                <a href="/CommunicationAdmin/DeleteCommunication/@item.CommunicationId" type="button" class="btn btn-outline-danger">Remove</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/CommunicationAdmin/CreateCommunication/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Communication</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -7,14 +7,14 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers.AdminController
 {
-    public class AboutAdminController : Controller
+    public class ClassRoomAdminController : Controller
     {
-        // GET: AboutAdmin
+        // GET: ClassRoom
         KidKinderContext kidKinderContext = new KidKinderContext();
-        public ActionResult About()
+        public ActionResult ClassRoomList()
         {
-            var values = kidKinderContext.Abouts.ToList();
+            var values = kidKinderContext.ClassRooms.ToList();
             return View(values);
         }
-    }
+    }    
 }

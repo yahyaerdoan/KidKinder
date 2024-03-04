@@ -1,16 +1,16 @@
-﻿@model List<KidKinder.Entities.Teacher>
+﻿@model List<KidKinder.Entities.About>
 @{
-    ViewBag.Title = "TeacherList";
+    ViewBag.Title = "About";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
-<div class="pcoded-inner-content">   
+<div class="pcoded-inner-content">
     <div class="main-body">
-        <div class="page-wrapper">           
-            <div class="page-body">               
+        <div class="page-wrapper">
+            <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Teacher List</h5>
+                        <h5>About List</h5>
                         <span>use class <code>table</code> inside table element</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
@@ -28,9 +28,11 @@
                                 <thead>
                                     <tr style="background-color:antiquewhite; color:black">
                                         <th scope="rowgroup">#</th>
-                                        <th scope="col">Study Of Field</th>
+                                        <th scope="col">Header</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Name - Surname</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Big Image Url</th>
+                                        <th scope="col">Small Image Url</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -39,21 +41,24 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <th scope="row">@item.TeacherId</th>
-                                            <td>@item.Branch.Name</td>
-                                            <td>@item.FieldOfStudy</td>
-                                            <td>@item.Name @item.Surname</td>
-                                            <td><a href="/TeacherAdmin/UpdateTeacher/@item.TeacherId" type="button" class="btn btn-outline-success">Update</a></td>
-                                            <td><a href="/TeacherAdmin/DeleteTeacher/@item.TeacherId" type="button" class="btn btn-outline-danger">Remove</a></td>
+                                            <th scope="row">@item.AboutId</th>
+                                            <td>@item.Header</td>
+                                            <td>@item.Title</td>
+                                            <td style="text-align:justify">@item.Description</td>
+                                            <td>@item.BigImage</td>
+                                            <td>@item.SmallImage</td>
+                                            <td><a href="/AboutAdmin/UpdateAbout/@item.AboutId" type="button" class="btn btn-outline-success">Update</a></td>
+                                            <td><a href="/AboutAdmin/DeleteAbout/@item.AboutId" type="button" class="btn btn-outline-danger">Remove</a></td>
                                         </tr>
                                     }
                                 </tbody>
-                            </table>  
-                            <a href="/TeacherAdmin/CreateTeacher/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Teacher</a>      
+                            </table>
+                            <a href="/AboutAdmin/CreateAbout/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New About</a>
                         </div>
                     </div>
-                </div>              
+                </div>
             </div>
         </div>
     </div>
 </div>
+

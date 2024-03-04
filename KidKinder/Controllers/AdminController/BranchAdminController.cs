@@ -7,13 +7,13 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers.AdminController
 {
-    public class AboutAdminController : Controller
+    public class BranchAdminController : Controller
     {
-        // GET: AboutAdmin
+        // GET: BranchAdmin
         KidKinderContext kidKinderContext = new KidKinderContext();
-        public ActionResult About()
+        public ActionResult BranchList()
         {
-            var values = kidKinderContext.Abouts.ToList();
+            var values = kidKinderContext.Branches.ToList();
             return View(values);
         }
     }
