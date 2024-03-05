@@ -934,6 +934,13 @@
     <Content Include="Views\NotificationAdmin\NotificationList.cshtml" />
     <Content Include="Views\ServiceAdmin\ServiceList.cshtml" />
     <Content Include="Views\TestimonialAdmin\TestimonialList.cshtml" />
+    <Content Include="Views\AboutAdmin\CreateAbout.cshtml" />
+    <Content Include="Views\NotificationAdmin\CreateNotification.cshtml" />
+    <Content Include="Views\AboutListAdmin\CreateAboutList.cshtml" />
+    <Content Include="Views\BranchAdmin\CreateBranch.cshtml" />
+    <Content Include="Views\ServiceAdmin\CreateService.cshtml" />
+    <Content Include="Views\BookASeatAdmin\CreateBookASeat.cshtml" />
+    <Content Include="Views\ClassRoomAdmin\CreateClassRoom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

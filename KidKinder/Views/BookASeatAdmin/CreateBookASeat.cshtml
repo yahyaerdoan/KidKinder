@@ -1,0 +1,61 @@
+﻿@model KidKinder.Entities.BookASeat
+@{
+    ViewBag.Title = "CreateBookASeat";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Create New Book A Seat</h5>
+                        <span>use class <code>table</code> inside table element</span>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/BookASeatAdmin/CreateBookASeat/">
+                                <div class="row">                                   
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Class Room Name</label>
+                                           @Html.DropDownListFor(i=>i.ClassRoomId, (List<SelectListItem>)ViewBag.ClassRoomHeader,
+                                          new { @class = "form-control"})
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Subject</label>
+                                            <input type="text" class="form-control" placeholder="subject" name="Title">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" placeholder="name" name="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Surname</label>
+                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>E-mail</label>
+                                            <input type="email" class="form-control" placeholder="e-mail" name="Email">
+                                        </div>
+                                    </div>
+                                </div>                               
+                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Book A Seat</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

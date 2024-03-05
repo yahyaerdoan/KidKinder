@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,27 @@ namespace KidKinder.Controllers.AdminController
         {
             var values = kidKinderContext.Abouts.ToList();
             return View(values);
+        }
+
+        [HttpGet]
+        public ActionResult CreateAbout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateAbout(About about)
+        {
+            kidKinderContext.Abouts.Add(about);
+            kidKinderContext.SaveChanges();
+            return View();
+        }
+        public ActionResult DeleteAbout(int id)
+        {
+            var values = kidKinderContext.Abouts.Find(id);
+            kidKinderContext.Abouts.Remove(values);           
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("About");
         }
     }
 }

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Create New About</h5>
+                        <span>use class <code>table</code> inside table element</span>                      
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/AboutAdmin/CreateAbout/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Header</label>
+                                            <input type="text" class="form-control" placeholder="header" name="Header">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="big image url" name="BigImage">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="small image url" name="SmallImage">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Create New About</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

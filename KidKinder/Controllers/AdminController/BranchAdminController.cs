@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,27 @@ namespace KidKinder.Controllers.AdminController
         {
             var values = kidKinderContext.Branches.ToList();
             return View(values);
+        }
+
+        [HttpGet]
+        public ActionResult CreateBranch()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateBranch(Branch branch)
+        {
+            kidKinderContext.Branches.Add(branch);
+            kidKinderContext.SaveChanges();
+            return View();
+        }
+        public ActionResult DeleteBranch(int id)
+        {
+            var values = kidKinderContext.Branches.Find(id);
+            kidKinderContext.Branches.Remove(values);
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("BranchList");
         }
     }
 }
