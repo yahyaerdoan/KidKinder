@@ -133,7 +133,11 @@
     <Compile Include="Controllers\AdminController\BranchAdminController.cs" />
     <Compile Include="Controllers\AdminController\ClassRoomAdminController.cs" />
     <Compile Include="Controllers\AdminController\CommunicationAdminController.cs" />
-    <Compile Include="Controllers\ContactAdminController.cs" />
+    <Compile Include="Controllers\AdminController\FeatureAdminController.cs" />
+    <Compile Include="Controllers\AdminController\NotificationAdminController.cs" />
+    <Compile Include="Controllers\AdminController\ServiceAdminController.cs" />
+    <Compile Include="Controllers\AdminController\TestimonialAdminController.cs" />
+    <Compile Include="Controllers\AdminController\ContactAdminController.cs" />
     <Compile Include="Controllers\DefaultViewController\AboutController.cs" />
     <Compile Include="Controllers\AdminController\AboutAdminController.cs" />
     <Compile Include="Controllers\AdminController\AdminLayoutController.cs" />
@@ -926,6 +930,10 @@
     <Content Include="Views\ClassRoomAdmin\ClassRoomList.cshtml" />
     <Content Include="Views\CommunicationAdmin\CommunicationList.cshtml" />
     <Content Include="Views\ContactAdmin\ContactList.cshtml" />
+    <Content Include="Views\FeatureAdmin\FeatureList.cshtml" />
+    <Content Include="Views\NotificationAdmin\NotificationList.cshtml" />
+    <Content Include="Views\ServiceAdmin\ServiceList.cshtml" />
+    <Content Include="Views\TestimonialAdmin\TestimonialList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

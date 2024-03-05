@@ -1,6 +1,6 @@
-﻿@model List<KidKinder.Entities.BookASeat>
+﻿@model List<KidKinder.Entities.Feature>
 @{
-    ViewBag.Title = "BookASeatList";
+    ViewBag.Title = "FeatureList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -10,7 +10,7 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Book A Seat List</h5>
+                        <h5>Feature List</h5>
                         <span>use class <code>table</code> inside table element</span>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
@@ -28,10 +28,10 @@
                                 <thead>
                                     <tr style="background-color:antiquewhite; color:black">
                                         <th scope="rowgroup">#</th>
-                                        <th scope="col">Class Name</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Name - Surname</th>
-                                        <th scope="col">Email</th>
+                                        <th scope="col">Header</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Image Url</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -40,18 +40,18 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <th scope="row">@item.BookASeatId</th>
-                                            <td>@item.ClassRoom.Header</td>
+                                            <th scope="row">@item.FeatureId</th>
                                             <td>@item.Title</td>
-                                            <td>@item.Name @item.Surname</td>
-                                            <td>@item.Email</td>
-                                            <td><a href="/BookASeatAdmin/UpdateBookASeat/@item.BookASeatId" type="button" class="btn btn-outline-success">Update</a></td>
-                                            <td><a href="/BookASeatAdmin/DeleteBookASeat/@item.BookASeatId" type="button" class="btn btn-outline-danger">Remove</a></td>
+                                            <td>@item.Header</td>
+                                            <td style="text-align:justify">@item.Description</td>
+                                            <td>@item.Image</td>
+                                            <td><a href="/FeatureAdmin/UpdateFeature/@item.FeatureId" type="button" class="btn btn-outline-success">Update</a></td>
+                                            <td><a href="/FeatureAdmin/DeleteFeature/@item.FeatureId" type="button" class="btn btn-outline-danger">Remove</a></td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
-                            <a href="/BookASeatAdmin/CreateBookASeat/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Book A Seat</a>
+                            <a href="/FeatureAdmin/CreateFeature/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Feature</a>
                         </div>
                     </div>
                 </div>

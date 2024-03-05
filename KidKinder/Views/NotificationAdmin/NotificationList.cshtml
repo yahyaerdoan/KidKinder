@@ -1,0 +1,76 @@
+﻿@model List<KidKinder.Entities.Notification>
+@{
+    ViewBag.Title = "NotificationList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Notification List</h5>
+                        <span>use class <code>table</code> inside table element</span>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li>
+                                    <i class="fa fa fa-wrench open-card-option"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-window-maximize full-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-minus minimize-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-refresh reload-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-trash close-card"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="background-color:antiquewhite; color:black">
+                                        <th scope="rowgroup">#</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Image Url</th>
+                                        <th scope="col">Sending Time</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.NotificationId</th>
+                                            <td>@item.Title</td>
+                                            <td style="text-align:justify">@item.Description</td>
+                                            <td>@item.Image</td>
+                                            <td>@item.Time</td>
+                                            <td>
+                                                <a href="/NotificationAdmin/UpdateNotification/@item.NotificationId" type="button" class="btn btn-outline-success">Update</a>
+                                            </td>
+                                            <td>
+                                                <a href="/NotificationAdmin/DeleteNotification/@item.NotificationId" type="button" class="btn btn-outline-danger">Remove</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/NotificationAdmin/CreateFeature/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Notification</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
