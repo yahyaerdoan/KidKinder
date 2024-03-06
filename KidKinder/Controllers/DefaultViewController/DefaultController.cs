@@ -65,7 +65,7 @@ namespace KidKinder.Controllers.DefaultViewController
 
         public PartialViewResult ClassRoomPartial()
         {
-            var values = kidKinderContext.ClassRooms.ToList();
+            var values = kidKinderContext.ClassRooms.OrderByDescending(i => i.ClassRoomId).Take(3).ToList();
             return PartialView(values);
         }
 
