@@ -38,5 +38,25 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("About");
         }
+
+        [HttpGet]
+        public ActionResult UpdateAbout(int id)
+        {
+            var values = kidKinderContext.Abouts.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAbout(About about)
+        {
+            var values = kidKinderContext.Abouts.Find(about.AboutId);
+            values.Header = about.Header;
+            values.Title = about.Title;
+            values.BigImage = about.BigImage;
+            values.SmallImage = about.SmallImage;
+            values.Description = about.Description;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("About");
+        }
     }
 }

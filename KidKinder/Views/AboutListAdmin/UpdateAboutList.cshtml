@@ -1,0 +1,43 @@
+﻿@model KidKinder.Entities.AboutList
+@{
+    ViewBag.Title = "UpdateAboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Update New About List</h5>
+                        <a href="/AboutAdmin/About/"><span>Go back <code>about list</code> with this element</span></a>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/AboutListAdmin/UpdateAboutList/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label></label>                                           
+                                            <input type="hidden" class="form-control" placeholder="about id" name="AboutListId" value="@Model.AboutListId">
+                                        </div>
+                                    </div>                                  
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New About List</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

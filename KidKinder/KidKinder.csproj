@@ -945,6 +945,8 @@
     <Content Include="Views\ContactAdmin\CreateContact.cshtml" />
     <Content Include="Views\TestimonialAdmin\CreateTestimonial.cshtml" />
     <Content Include="Views\FeatureAdmin\CreateFeature.cshtml" />
+    <Content Include="Views\AboutAdmin\UpdateAbout.cshtml" />
+    <Content Include="Views\AboutListAdmin\UpdateAboutList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

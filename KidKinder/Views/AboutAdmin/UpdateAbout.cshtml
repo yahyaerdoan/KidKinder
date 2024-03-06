@@ -1,0 +1,63 @@
+﻿@model KidKinder.Entities.About
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Create New About</h5>
+                        <a href="/AboutAdmin/About/"><span>Go back <code>about list</code> with this element</span></a>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/AboutAdmin/UpdateAbout/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Header</label>
+                                            <input type="text" class="form-control" placeholder="header" name="Header" value="@Model.Header">
+                                            <input type="hidden" class="form-control" placeholder="about id" name="AboutId" value="@Model.AboutId">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="big image url" name="BigImage" value="@Model.BigImage">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="small image url" name="SmallImage" value="@Model.SmallImage">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New About</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
