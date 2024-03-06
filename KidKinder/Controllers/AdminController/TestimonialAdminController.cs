@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,27 @@ namespace KidKinder.Controllers.AdminController
         {
             var values = kidKinderContext.Testimonials.ToList();
             return View(values);
+        }
+
+        [HttpGet]
+        public ActionResult CreateTestimonial()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateTestimonial(Testimonial testimonial)
+        {           
+            kidKinderContext.Testimonials.Add(testimonial);
+            kidKinderContext.SaveChanges();
+            return View();
+        }
+        public ActionResult DeleteTestimonial(int id)
+        {
+            var values = kidKinderContext.Testimonials.Find(id);
+            kidKinderContext.Testimonials.Remove(values);
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("TestimonialList");
         }
     }
 }

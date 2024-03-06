@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Create New Testimonial</h5>
+                        <span>use class <code>table</code> inside table element</span>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/TestimonialAdmin/CreateTestimonial/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" placeholder="name" name="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Surname</label>
+                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
+                                        </div>
+                                    </div>    
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="image" name="Image">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Comment</label>
+                                            <textarea class="form-control" rows="3" placeholder="comment" name="Comment"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Testimonial</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
