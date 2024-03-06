@@ -40,5 +40,30 @@ namespace KidKinder.Controllers
             kidKinderContext.SaveChanges();
             return RedirectToAction("ContactList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateContact(int id)
+        {
+            var values = kidKinderContext.Contacts.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateContact(Contact contact)
+        {
+            var values = kidKinderContext.Contacts.Find(contact.ContactId);
+            values.Title = contact.Title;
+            values.Header = contact.Header;
+            values.Description = contact.Description;
+            values.Name = contact.Name;
+            values.Surname = contact.Surname;
+            values.Email = contact.Email;
+            values.Subject = contact.Subject;
+            values.Message = contact.Message;
+            values.SendDate = contact.SendDate = DateTime.Now;
+            values.IsRead = contact.IsRead = false;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("ContactList");
+        }
     }
 }

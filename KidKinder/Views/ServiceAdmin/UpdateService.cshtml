@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "CreateNotification";
+﻿@model KidKinder.Entities.Service
+@{
+    ViewBag.Title = "UpdateService";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -9,37 +10,37 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Notification</h5>
-                        <a href="/NotificationAdmin/NotificationList/"><span>Go back <code>notification list</code> with this element</span></a>
-
+                        <h5>Update New Service</h5>
+                        <a href="/ServiceAdmin/ServiceList/"><span>Go back <code>service list</code> with this element</span></a>
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/NotificationAdmin/CreateNotification/">
-                                <div class="row">                                  
+                            <form role="form" method="post" action="/ServiceAdmin/UpdateService/">
+                                <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="service id" name="ServiceId" value="@Model.ServiceId">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>Image Url</label>
-                                            <input type="text" class="form-control" placeholder="image url" name="Image">
+                                            <label>Icon Url</label>
+                                            <input type="text" class="form-control" placeholder="icon url" name="Icon" value="@Model.Icon">
                                         </div>
-                                    </div>                                  
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3" placeholder="description" name="Description"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Notification</button>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Service</button>
                             </form>
                         </div>
                     </div>
@@ -48,4 +49,3 @@
         </div>
     </div>
 </div>
-

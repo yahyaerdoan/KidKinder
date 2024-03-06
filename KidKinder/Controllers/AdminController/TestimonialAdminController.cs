@@ -38,5 +38,24 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("TestimonialList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateTestimonial(int id)
+        {
+            var values = kidKinderContext.Testimonials.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateTestimonial(Testimonial testimonial)
+        {
+            var values = kidKinderContext.Testimonials.Find(testimonial.TestimonialId);
+            values.Title = testimonial.Title;
+            values.Name = testimonial.Name;
+            values.Surname = testimonial.Surname;
+            values.Comment = testimonial.Comment;
+            values.Image = testimonial.Image;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("TestimonialList");
+        }
     }
 }

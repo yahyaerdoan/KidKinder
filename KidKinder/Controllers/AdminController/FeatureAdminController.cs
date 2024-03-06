@@ -38,5 +38,23 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("FeatureList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateFeature(int id)
+        {
+            var values = kidKinderContext.Features.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateFeature(Feature feature)
+        {
+            var values = kidKinderContext.Features.Find(feature.FeatureId);
+            values.Title = feature.Title;
+            values.Header = feature.Header;
+            values.Image = feature.Image;
+            values.Description = feature.Description;           
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("FeatureList");
+        }
     }
 }

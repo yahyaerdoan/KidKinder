@@ -38,5 +38,22 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("ServiceList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateService(int id)
+        {
+            var values = kidKinderContext.Services.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateService(Service service)
+        {
+            var values = kidKinderContext.Services.Find(service.ServiceId);
+            values.Title = service.Title;          
+            values.Description = service.Description;
+            values.Icon = service.Icon;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("ServiceList");
+        }
     }
 }

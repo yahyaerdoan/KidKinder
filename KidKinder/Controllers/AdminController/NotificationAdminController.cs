@@ -39,5 +39,23 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("NotificationList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateNotification(int id)
+        {
+            var values = kidKinderContext.Notifications.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateNotification(Notification notification)
+        {
+            var values = kidKinderContext.Notifications.Find(notification.NotificationId);
+            values.Title = notification.Title;           
+            values.Image = notification.Image;
+            values.Description = notification.Description;
+            values.Time = notification.Time = DateTime.Now;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("NotificationList");
+        }
     }
 }

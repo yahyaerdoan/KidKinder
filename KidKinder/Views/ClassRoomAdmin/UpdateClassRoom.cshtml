@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "CreateContact";
+﻿@model KidKinder.Entities.ClassRoom
+@{
+    ViewBag.Title = "UpdateClassRoom";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -9,56 +10,60 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Contact</h5>
-                        <a href="/ContactAdmin/ContactList/"><span>Go back <code>contact list</code> with this element</span></a>
+                        <h5>Update New Class Room</h5>
+                        <a href="/ClassRoomAdmin/ClassRoomList/"><span>Go back <code>class room list</code> with this element</span></a>
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/ContactAdmin/CreateContact/">
+                            <form role="form" method="post" action="/ClassRoomAdmin/UpdateClassRoom/">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="class room id" name="ClassRoomId" value="@Model.ClassRoomId">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Header</label>
-                                            <input type="text" class="form-control" placeholder="header" name="Header">
+                                            <input type="text" class="form-control" placeholder="header" name="Header" value="@Model.Header">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="name" name="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label>Surname</label>
-                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label>E-mail</label>
-                                            <input type="email" class="form-control" placeholder="e-mail" name="Email">
+                                            <label>Age of Kid</label>
+                                            <input type="text" class="form-control" placeholder="age of kid" name="AgeOfKid" value="@Model.AgeOfKid">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>Subject</label>
-                                            <input type="text" class="form-control" placeholder="subject" name="Subject">
+                                            <label>Total Seat</label>
+                                            <input type="text" class="form-control" placeholder="total seat" name="TotalSeat" value="@Model.TotalSeat">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label>Message</label>
-                                            <input type="text" class="form-control" placeholder="message" name="Message">
+                                            <label>Class Time</label>
+                                            <input type="text" class="form-control" placeholder="class time" name="ClassTime" value="@Model.ClassTime">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Price</label>
+                                            <input type="text" class="form-control" placeholder="price" name="Price" value="@Model.Price">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url</label>
+                                            <input type="text" class="form-control" placeholder="image url" name="Image" value="@Model.Image">
                                         </div>
                                     </div>
                                 </div>
@@ -66,11 +71,11 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3" placeholder="description" name="Description"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Descripction">@Model.Descripction</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Contact</button>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Class Room</button>
                             </form>
                         </div>
                     </div>

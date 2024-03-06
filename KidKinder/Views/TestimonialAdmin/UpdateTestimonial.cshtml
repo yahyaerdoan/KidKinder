@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "CreateTestimonial";
+﻿@model KidKinder.Entities.Testimonial
+@{
+    ViewBag.Title = "UpdateTestimonial";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -9,35 +10,39 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Testimonial</h5>
+                        <h5>Update New Testimonial</h5>
                         <a href="/TestimonialAdmin/TestimonialList/"><span>Go back <code>testimonial list</code> with this element</span></a>
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/TestimonialAdmin/CreateTestimonial/">
+                            <form role="form" method="post" action="/TestimonialAdmin/UpdateTestimonial/">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="testimonial id" name="TestimonialId" value="@Model.TestimonialId">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="name" name="Name">
+                                            <input type="text" class="form-control" placeholder="name" name="Name" value="@Model.Name">
                                         </div>
                                     </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Surname</label>
-                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
+                                            <input type="text" class="form-control" placeholder="surname" name="Surname" value="@Model.Surname">
                                         </div>
                                     </div>
+
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Image Url</label>
-                                            <input type="text" class="form-control" placeholder="image" name="Image">
+                                            <input type="text" class="form-control" placeholder="image url" name="Image" value="@Model.Image">
                                         </div>
                                     </div>
                                 </div>
@@ -45,11 +50,11 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Comment</label>
-                                            <textarea class="form-control" rows="3" placeholder="comment" name="Comment"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="comment" name="Comment">@Model.Title</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Testimonial</button>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Testimonial</button>
                             </form>
                         </div>
                     </div>
@@ -58,3 +63,4 @@
         </div>
     </div>
 </div>
+

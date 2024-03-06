@@ -18,7 +18,6 @@ namespace KidKinder.Controllers.AdminController
             return View(values);
         }
 
-
         [HttpGet]
         public ActionResult CreateCommunication()
         {
@@ -36,6 +35,30 @@ namespace KidKinder.Controllers.AdminController
         {
             var values = kidKinderContext.Communications.Find(id);
             kidKinderContext.Communications.Remove(values);
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("CommunicationList");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateCommunication(int id)
+        {
+            var values = kidKinderContext.Communications.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCommunication(Communication communication)
+        {
+            var values = kidKinderContext.Communications.Find(communication.CommunicationId);
+            values.Title = communication.Title;
+            values.Header = communication.Header;
+            values.Descripction = communication.Descripction;
+            values.Address = communication.Address;
+            values.Email = communication.Email;
+            values.Phone = communication.Phone;
+            values.OpeningHour = communication.OpeningHour;
+            values.Day = communication.Day;
+            values.Hour = communication.Hour;
             kidKinderContext.SaveChanges();
             return RedirectToAction("CommunicationList");
         }

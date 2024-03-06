@@ -38,5 +38,27 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("ClassRoomList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateClassRoom(int id)
+        {
+            var values = kidKinderContext.ClassRooms.Find(id);
+            return View(values);
+        }
+        [HttpPost]
+        public ActionResult UpdateClassRoom(ClassRoom classRoom)
+        {
+            var values = kidKinderContext.ClassRooms.Find(classRoom.ClassRoomId);
+            values.Title = classRoom.Title;
+            values.Header = classRoom.Header;
+            values.Descripction = classRoom.Descripction;
+            values.AgeOfKid = classRoom.AgeOfKid;
+            values.TotalSeat = classRoom.TotalSeat;
+            values.ClassTime = classRoom.ClassTime;
+            values.Price = classRoom.Price;
+            values.Image = classRoom.Image;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("ClassRoomList");
+        }
     }    
 }

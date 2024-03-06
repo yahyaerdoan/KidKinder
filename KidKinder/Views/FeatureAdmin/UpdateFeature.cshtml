@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "CreateFeature";
+﻿@model KidKinder.Entities.Feature
+@{
+    ViewBag.Title = "UpdateFeature";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -9,31 +10,32 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Feature</h5>
-                        <a href="/FeatureAdmin/FeatureList/"><span>Go back <code>feature list</code> with this element</span></a> 
+                        <h5>Update New Feature</h5>
+                        <a href="/FeatureAdmin/FeatureList/"><span>Go back <code>feature list</code> with this element</span></a>
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/FeatureAdmin/CreateFeature/">
+                            <form role="form" method="post" action="/FeatureAdmin/UpdateFeature/">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="feature id" name="FeatureId" value="@Model.FeatureId">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Header</label>
-                                            <input type="text" class="form-control" placeholder="header" name="Header">
+                                            <input type="text" class="form-control" placeholder="header" name="Header" value="@Model.Header">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Image Url</label>
-                                            <input type="text" class="form-control" placeholder="image url" name="Image">
+                                            <input type="text" class="form-control" placeholder="image url" name="Image" value="@Model.Image">
                                         </div>
                                     </div>
                                 </div>
@@ -41,11 +43,11 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3" placeholder="description" name="Description"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Feature</button>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Feature</button>
                             </form>
                         </div>
                     </div>
@@ -54,3 +56,4 @@
         </div>
     </div>
 </div>
+

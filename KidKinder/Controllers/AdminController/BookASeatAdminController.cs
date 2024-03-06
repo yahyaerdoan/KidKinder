@@ -54,5 +54,25 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("BookASeatList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateBookASeat(int id)
+        {
+            GetClassHeadertBySelectListItem();
+            var values = kidKinderContext.BookASeats.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBookASeat(BookASeat bookASeat)
+        {
+            var values = kidKinderContext.BookASeats.Find(bookASeat.BookASeatId);
+            values.Title = bookASeat.Title;
+            values.Name = bookASeat.Name;
+            values.Surname = bookASeat.Surname;
+            values.Email = bookASeat.Email;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("BookASeatList");
+        }
     }
 }

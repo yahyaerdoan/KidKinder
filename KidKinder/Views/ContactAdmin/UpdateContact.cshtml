@@ -1,7 +1,10 @@
-﻿@{
-    ViewBag.Title = "CreateContact";
+﻿@model KidKinder.Entities.Contact
+@{
+    ViewBag.Title = "UpdateContact";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+
+<h2>UpdateContact</h2>
 
 <div class="pcoded-inner-content">
     <div class="main-body">
@@ -9,56 +12,57 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Contact</h5>
+                        <h5>Update New Contact</h5>
                         <a href="/ContactAdmin/ContactList/"><span>Go back <code>contact list</code> with this element</span></a>
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/ContactAdmin/CreateContact/">
+                            <form role="form" method="post" action="/ContactAdmin/UpdateContact/">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="contact id" name="ContactId" value="@Model.ContactId">
                                             <label>Title</label>
-                                            <input type="text" class="form-control" placeholder="title" name="Title">
+                                            <input type="text" class="form-control" placeholder="title" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Header</label>
-                                            <input type="text" class="form-control" placeholder="header" name="Header">
+                                            <input type="text" class="form-control" placeholder="header" name="Header" value="@Model.Header">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="name" name="Name">
+                                            <input type="text" class="form-control" placeholder="name" name="Name" value="@Model.Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Surname</label>
-                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
+                                            <input type="text" class="form-control" placeholder="surname" name="Surname" value="@Model.Surname">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>E-mail</label>
-                                            <input type="email" class="form-control" placeholder="e-mail" name="Email">
+                                            <input type="email" class="form-control" placeholder="e-mail" name="Email" value="@Model.Email">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Subject</label>
-                                            <input type="text" class="form-control" placeholder="subject" name="Subject">
+                                            <input type="text" class="form-control" placeholder="subject" name="Subject" value="@Model.Subject">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Message</label>
-                                            <input type="text" class="form-control" placeholder="message" name="Message">
+                                            <input type="text" class="form-control" placeholder="message" name="Message" value="@Model.Message">
                                         </div>
                                     </div>
                                 </div>
@@ -66,11 +70,11 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Description</label>
-                                            <textarea class="form-control" rows="3" placeholder="description" name="Description"></textarea>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Contact</button>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Contact</button>
                             </form>
                         </div>
                     </div>

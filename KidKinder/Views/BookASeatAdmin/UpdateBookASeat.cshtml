@@ -1,6 +1,6 @@
 ﻿@model KidKinder.Entities.BookASeat
 @{
-    ViewBag.Title = "CreateBookASeat";
+    ViewBag.Title = "UpdateBookASeat";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -10,48 +10,49 @@
             <div class="page-body">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Create New Book A Seat</h5>
-                        <a href="/BookASeatAdmin/BookASeatList/"><span>Go back <code>book a seat list</code> with this element</span></a>
+                        <h5>Update New Book A Seat</h5>
+                        <a href="/BookASeatAdmin/BookASeatList/"><span>Go to back <code>book a seat list</code> with this element</span></a>
 
                     </div>
                     <div class="card-block table-border-style">
                         <div class="card-body">
-                            <form role="form" method="post" action="/BookASeatAdmin/CreateBookASeat/">
+                            <form role="form" method="post" action="/BookASeatAdmin/UpdateBookASeat/">
                                 <div class="row">                                   
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="about id" name="BookASeatId" value="@Model.BookASeatId">
                                             <label>Class Room Name</label>
-                                           @Html.DropDownListFor(i=>i.ClassRoomId, (List<SelectListItem>)ViewBag.ClassRoomHeader,
-                                          new { @class = "form-control"})
+                                            @Html.DropDownListFor(i => i.ClassRoomId, (List<SelectListItem>)ViewBag.ClassRoomHeader,
+                                           new { @class = "form-control; custom-select" })
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Subject</label>
-                                            <input type="text" class="form-control" placeholder="subject" name="Title">
+                                            <input type="text" class="form-control" placeholder="subject" name="Title" value="@Model.Title">
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="name" name="Name">
+                                            <input type="text" class="form-control" placeholder="name" name="Name" value="@Model.Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>Surname</label>
-                                            <input type="text" class="form-control" placeholder="surname" name="Surname">
+                                            <input type="text" class="form-control" placeholder="surname" name="Surname" value="@Model.Surname">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label>E-mail</label>
-                                            <input type="email" class="form-control" placeholder="e-mail" name="Email">
+                                            <input type="email" class="form-control" placeholder="e-mail" name="Email" value="@Model.Email">
                                         </div>
                                     </div>
-                                </div>                               
-                                <button type="submit" class="btn btn-outline-success col-md-12">Create New Book A Seat</button>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Book A Seat</button>
                             </form>
                         </div>
                     </div>

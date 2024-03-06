@@ -947,6 +947,15 @@
     <Content Include="Views\FeatureAdmin\CreateFeature.cshtml" />
     <Content Include="Views\AboutAdmin\UpdateAbout.cshtml" />
     <Content Include="Views\AboutListAdmin\UpdateAboutList.cshtml" />
+    <Content Include="Views\BookASeatAdmin\UpdateBookASeat.cshtml" />
+    <Content Include="Views\BranchAdmin\UpdateBranch.cshtml" />
+    <Content Include="Views\ClassRoomAdmin\UpdateClassRoom.cshtml" />
+    <Content Include="Views\CommunicationAdmin\UpdateCommunication.cshtml" />
+    <Content Include="Views\ContactAdmin\UpdateContact.cshtml" />
+    <Content Include="Views\FeatureAdmin\UpdateFeature.cshtml" />
+    <Content Include="Views\NotificationAdmin\UpdateNotification.cshtml" />
+    <Content Include="Views\ServiceAdmin\UpdateService.cshtml" />
+    <Content Include="Views\TestimonialAdmin\UpdateTestimonial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

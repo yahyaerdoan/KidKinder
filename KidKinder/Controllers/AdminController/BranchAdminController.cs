@@ -38,5 +38,21 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("BranchList");
         }
+
+        [HttpGet]
+        public ActionResult UpdateBranch(int id)
+        {
+            var values = kidKinderContext.Branches.Find(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBranch(Branch branch)
+        {
+            var values = kidKinderContext.Branches.Find(branch.BranchId);
+            values.Name = branch.Name;          
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("BranchList");
+        }
     }
 }

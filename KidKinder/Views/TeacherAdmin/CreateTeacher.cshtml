@@ -5,23 +5,19 @@
 }
 
 <div class="pcoded-inner-content">
-    <!-- Main-body start -->
     <div class="main-body">
         <div class="page-wrapper">
-            <!-- Page body start -->
             <div class="page-body">
                 <div class="row">
                     <div class="col-sm-12">
-                        <!-- Basic Form Inputs card start -->
                         <div class="card">
                             <div class="card-header">
                                 <h5>Create New Teacher</h5>
-                                <a href="/TeacherAdmin/TeacherList/"><span>Go to back <code>teacher list</code> with this element</span></a>
+                                <a href="/TeacherAdmin/TeacherList/"><span>Go back <code>teacher list</code> with this element</span></a>
                             </div>
                             <div class="card-block">
                                 <h4 class="sub-title">Basic Informations</h4>
                                 <form method="post" action="/TeacherAdmin/CreateTeacher">
-
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label">Name</label>
                                         <div class="col-sm-10">
@@ -40,7 +36,7 @@
                                         <label class="col-sm-2 col-form-label">Title</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" placeholder="title" name="FieldOfStudy">
-                                          
+
                                         </div>
                                     </div>
 
@@ -52,7 +48,7 @@
                               new { @class = "form-group; custom-select border-1" })
 
                                             @*@Html.DropDownListFor(b => b.BranchId, (SelectList)ViewBag.BranchNameBy, "Select A Field",
-                              new { @class = "form-group; custom-select border-1" })*@
+                                                new { @class = "form-group; custom-select border-1" })*@
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -62,14 +58,12 @@
                                         </div>
                                     </div>
                                     <button class="btn btn-outline-success col-md-12">Create New Teacher</button>
-                                </form>                               
+                                </form>
                             </div>
                         </div>
-                        <!-- Basic Form Inputs card end -->
                     </div>
                 </div>
             </div>
-            <!-- Page body end -->
         </div>
-    </div>   
+    </div>
 </div>

@@ -30,6 +30,7 @@
                                         <th scope="col">Study Of Field</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Name - Surname</th>
+                                        <th scope="col">Image Url</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -42,6 +43,7 @@
                                             <td>@item.Branch.Name</td>
                                             <td>@item.FieldOfStudy</td>
                                             <td>@item.Name @item.Surname</td>
+                                            <td>@item.Image</td>
                                             <td><a href="/TeacherAdmin/UpdateTeacher/@item.TeacherId" type="button" class="btn btn-outline-success">Update</a></td>
                                             <td><a href="/TeacherAdmin/DeleteTeacher/@item.TeacherId" type="button" class="btn btn-outline-danger">Remove</a></td>
                                         </tr>
