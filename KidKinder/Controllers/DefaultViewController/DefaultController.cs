@@ -85,7 +85,8 @@ namespace KidKinder.Controllers.DefaultViewController
 
         public PartialViewResult GalleryPartial()
         {
-            return PartialView();
+            var values = kidKinderContext.Galleries.ToList();
+            return PartialView(values);
         }
       
         public PartialViewResult TestimonialPartial()

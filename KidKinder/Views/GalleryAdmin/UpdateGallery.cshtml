@@ -1,0 +1,63 @@
+﻿@model KidKinder.Entities.Gallery
+@{
+    ViewBag.Title = "UpdateGallery";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Update New Gallery</h5>
+                        <a href="/GalleryAdmin/GalleryList/"><span>Go back <code>gallery list</code> with this element</span></a>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/GalleryAdmin/UpdateGallery/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="category id" name="GalleryId" value="@Model.GalleryId">
+                                            <label>Category Id</label>
+                                            <input type="text" class="form-control" placeholder="category id" name="CategoryId" value="@Model.CategoryId">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url 1</label>
+                                            <input type="text" class="form-control" placeholder="first image url" name="Image1" value="@Model.Image1">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Image Url 2</label>
+                                            <input type="text" class="form-control" placeholder="second image url" name="Image2" value="@Model.Image2">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Statu</label>
+                                            <input type="text" class="form-control" placeholder="statu" name="Statu" value="@Model.Statu">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3" placeholder="description" name="Description">@Model.Description</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New Gallery</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
