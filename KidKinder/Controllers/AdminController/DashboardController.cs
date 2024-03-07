@@ -1,4 +1,5 @@
 ﻿using KidKinder.Context;
+using KidKinder.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,27 @@ namespace KidKinder.Controllers.AdminController
 
             ViewBag.TeacherCount = kidKinderContext.Teachers.Count();
             return View();
+        }
+
+        public PartialViewResult ClassRoomTeacherChart()
+        {
+            var values = Json(ClassRoomsAndTeachers(), JsonRequestBehavior.AllowGet);           
+            return PartialView(values);
+        }
+        public List<Teacher> ClassRoomsAndTeachers()
+        {
+            List<Teacher> teachers = new List<Teacher>();
+            var values = kidKinderContext.Teachers.ToList();
+            foreach (var item in values)
+            {
+                var teacherData = new Teacher()
+                {
+                   Name = item.Name,
+                   FieldOfStudy = item.FieldOfStudy
+                };
+                teachers.Add(teacherData);
+            }           
+             return values;            
         }
     }
 }

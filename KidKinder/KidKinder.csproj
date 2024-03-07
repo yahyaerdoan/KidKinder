@@ -964,6 +964,7 @@
     <Content Include="Views\Default\GalleryPartial.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\GalleryPartial.cshtml" />
+    <Content Include="Views\Dashboard\ClassRoomTeacherChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

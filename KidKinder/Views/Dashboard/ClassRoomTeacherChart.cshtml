@@ -1,0 +1,75 @@
+﻿<html>
+
+<head>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+         $(document).ready(function () {
+
+            $.ajax({
+
+                type: "POST",
+
+                dataType: "json",
+
+                contentType: "application/json",
+
+                url: '@Url.Action("ClassRoomTeacherChart", "Dashboard")',
+
+                success: function (result) {
+
+                    google.charts.load('current', {
+
+                        'packages': ['corechart']
+
+                    });
+
+                    google.charts.setOnLoadCallback(function () {
+
+                        drawChart(result);
+
+                    });
+
+                }
+
+            });
+
+        });
+
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'FieldOfStudy');
+
+            data.addColumn('string', 'Name');
+
+            var dataArray = [];
+
+
+
+            $.each(result, function (i, obj) {
+
+                dataArray.push([obj.FieldOfStudy, obj.Name]);
+
+            });
+          
+            data.addRows(dataArray);
+
+            var options = {
+                title: 'My Daily Activities',
+                is3D: true,
+            };
+
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
