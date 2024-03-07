@@ -13,7 +13,8 @@ namespace KidKinder.Controllers.DefaultViewController
         KidKinderContext kidKinderContext = new KidKinderContext();
         public ActionResult Index()
         {
-            return View();
+            var values = kidKinderContext.ClassRooms.ToList();
+            return View(values);
         }
 
         public PartialViewResult ClassRoomPartial()
