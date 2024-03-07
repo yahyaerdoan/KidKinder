@@ -8,10 +8,12 @@ using System.Web.Mvc;
 
 namespace KidKinder.Controllers.DefaultViewController
 {
+    
     public class DefaultController : Controller
     {
         // GET: Default
         KidKinderContext kidKinderContext = new KidKinderContext();
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

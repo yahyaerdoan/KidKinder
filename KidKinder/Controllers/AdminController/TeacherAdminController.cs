@@ -7,8 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace KidKinder.Controllers.AdminController
-{
-    [Authorize]
+{  
     public class TeacherAdminController : Controller
     {
         // GET: TeacherAdmin

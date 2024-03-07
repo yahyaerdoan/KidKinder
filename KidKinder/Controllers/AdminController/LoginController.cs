@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace KidKinder.Controllers.AdminController
 {
+    [AllowAnonymous]
     public class LogInController : Controller
     {
         // GET: Login
