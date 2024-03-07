@@ -152,6 +152,7 @@
     <Compile Include="Controllers\AdminController\ErrorPageController.cs" />
     <Compile Include="Controllers\AdminController\LogInController.cs" />
     <Compile Include="Controllers\AdminController\TeacherAdminController.cs" />
+    <Compile Include="Controllers\DefaultViewController\GalleryController.cs" />
     <Compile Include="Controllers\DefaultViewController\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
     <Compile Include="Entities\AboutList.cs" />
@@ -960,6 +961,9 @@
     <Content Include="Views\Admin\AdminList.cshtml" />
     <Content Include="Views\Admin\CreateAdmin.cshtml" />
     <Content Include="Views\Admin\UpdateAdmin.cshtml" />
+    <Content Include="Views\Default\GalleryPartial.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\GalleryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

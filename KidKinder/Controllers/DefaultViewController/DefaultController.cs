@@ -82,6 +82,11 @@ namespace KidKinder.Controllers.DefaultViewController
             var values = kidKinderContext.Teachers.ToList();
             return PartialView(values);
         }
+
+        public PartialViewResult GalleryPartial()
+        {
+            return PartialView();
+        }
       
         public PartialViewResult TestimonialPartial()
         {
