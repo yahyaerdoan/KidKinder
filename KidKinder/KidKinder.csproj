@@ -129,11 +129,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Context\KidKinderContext.cs" />
     <Compile Include="Controllers\AdminController\AboutListAdminController.cs" />
+    <Compile Include="Controllers\AdminController\AdminController.cs" />
     <Compile Include="Controllers\AdminController\BookASeatAdminController.cs" />
     <Compile Include="Controllers\AdminController\BranchAdminController.cs" />
     <Compile Include="Controllers\AdminController\ClassRoomAdminController.cs" />
     <Compile Include="Controllers\AdminController\CommunicationAdminController.cs" />
     <Compile Include="Controllers\AdminController\FeatureAdminController.cs" />
+    <Compile Include="Controllers\AdminController\LogOutController.cs" />
     <Compile Include="Controllers\AdminController\NotificationAdminController.cs" />
     <Compile Include="Controllers\AdminController\ServiceAdminController.cs" />
     <Compile Include="Controllers\AdminController\TestimonialAdminController.cs" />
@@ -148,7 +150,7 @@
     <Compile Include="Controllers\AdminController\DashboardController.cs" />
     <Compile Include="Controllers\DefaultViewController\DefaultController.cs" />
     <Compile Include="Controllers\AdminController\ErrorPageController.cs" />
-    <Compile Include="Controllers\AdminController\LoginController.cs" />
+    <Compile Include="Controllers\AdminController\LogInController.cs" />
     <Compile Include="Controllers\AdminController\TeacherAdminController.cs" />
     <Compile Include="Controllers\DefaultViewController\TeacherController.cs" />
     <Compile Include="Entities\About.cs" />
@@ -805,7 +807,6 @@
     <Content Include="Views\Teacher\TeacherPartial.cshtml" />
     <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\Communication\CommunicationPartial.cshtml" />
-    <Content Include="Views\Shared\_ContactCommunicationLayout.cshtml" />
     <Content Include="Views\AdminLayout\Index.cshtml" />
     <Content Include="Templates\kidkinder-1.0.0\material_able-main\assets\icon\CAW.TTF" />
     <Content Include="Templates\kidkinder-1.0.0\material_able-main\assets\icon\fa-brands-400.eot" />
@@ -922,7 +923,7 @@
     <Content Include="Views\TeacherAdmin\UpdateTeacher.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
-    <Content Include="Views\Login\AdminLogin.cshtml" />
+    <Content Include="Views\LogIn\AdminLogIn.cshtml" />
     <Content Include="Views\AboutAdmin\About.cshtml" />
     <Content Include="Views\AboutListAdmin\AboutList.cshtml" />
     <Content Include="Views\BookASeatAdmin\BookASeatList.cshtml" />
@@ -956,11 +957,13 @@
     <Content Include="Views\NotificationAdmin\UpdateNotification.cshtml" />
     <Content Include="Views\ServiceAdmin\UpdateService.cshtml" />
     <Content Include="Views\TestimonialAdmin\UpdateTestimonial.cshtml" />
+    <Content Include="Views\Admin\AdminList.cshtml" />
+    <Content Include="Views\Admin\CreateAdmin.cshtml" />
+    <Content Include="Views\Admin\UpdateAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
-    <Folder Include="Views\LogOut\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

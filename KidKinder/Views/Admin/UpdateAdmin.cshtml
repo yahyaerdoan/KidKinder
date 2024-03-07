@@ -1,0 +1,43 @@
+﻿@model KidKinder.Entities.Admin
+@{
+    ViewBag.Title = "UpdateAdmin";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Update New Admin</h5>
+                        <a href="/Admin/AdminList/"><span>Go back <code>admin list</code> with this element</span></a>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="card-body">
+                            <form role="form" method="post" action="/Admin/UpdateAdmin/">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="hidden" class="form-control" placeholder="admin id" name="AdminId" value="@Model.AdminId">
+                                            <label>User Name</label>
+                                            <input type="text" class="form-control" placeholder="user name" name="UserName" value="@Model.UserName">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" class="form-control" placeholder="password" name="Password" value="@Model.Password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success col-md-12">Update New About</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

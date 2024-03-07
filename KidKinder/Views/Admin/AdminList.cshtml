@@ -1,0 +1,56 @@
+﻿@model List<KidKinder.Entities.Admin>
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="pcoded-inner-content">
+    <div class="main-body">
+        <div class="page-wrapper">
+            <div class="page-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Admin List</h5>
+                        <div class="card-header-right">
+                            <ul class="list-unstyled card-option">
+                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                <li><i class="fa fa-window-maximize full-card"></i></li>
+                                <li><i class="fa fa-minus minimize-card"></i></li>
+                                <li><i class="fa fa-refresh reload-card"></i></li>
+                                <li><i class="fa fa-trash close-card"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr style="background-color:antiquewhite; color:black">
+                                        <th scope="rowgroup">#</th>
+                                        <th scope="col">User Name</th>
+                                        <th scope="col">Password</th>
+                                        <th scope="col">Update</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <th scope="row">@item.AdminId</th>
+                                            <td>@item.UserName</td>
+                                            <td>@item.Password</td>
+                                            <td><a href="/Admin/UpdateAdmin/@item.AdminId" type="button" class="btn btn-outline-success">Update</a></td>
+                                            <td><a href="/Admin/DeleteAdmin/@item.AdminId" type="button" class="btn btn-outline-danger">Remove</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/CreateAdmin/" class="btn btn-outline-primary col-md-12 " style="margin-top: 1rem;">Create New Admin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

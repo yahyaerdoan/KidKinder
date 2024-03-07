@@ -9,30 +9,30 @@ using System.Web.Security;
 
 namespace KidKinder.Controllers.AdminController
 {
-    public class LoginController : Controller
+    public class LogInController : Controller
     {
         // GET: Login
         KidKinderContext kidKinderContext = new KidKinderContext();
        
         [HttpGet]
-        public ActionResult AdminLogin()
+        public ActionResult AdminLogIn()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult AdminLogin(Admin admin)
+        public ActionResult AdminLogIn(Admin admin)
         {
             var result = kidKinderContext.Admins.FirstOrDefault(a => a.UserName == admin.UserName && a.Password == admin.Password);
             if (result != null)
             {
                 FormsAuthentication.SetAuthCookie(admin.UserName, true);
                 Session["UserName"] = result.UserName;
-                return RedirectToAction("TeacherList", "TeacherAdmin");
+                return RedirectToAction("Index", "Dashboard");
             }
             else
             {
                 return View();
             }           
-        }
+        }       
     }
 }
