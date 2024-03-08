@@ -982,6 +982,7 @@
     <Content Include="Views\GalleryAdmin\GalleryList.cshtml" />
     <Content Include="Views\GalleryAdmin\CreateGallery.cshtml" />
     <Content Include="Views\GalleryAdmin\UpdateGallery.cshtml" />
+    <Content Include="Views\Dashboard\TeacherListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

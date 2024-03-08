@@ -58,5 +58,21 @@ namespace KidKinder.Controllers.AdminController
             kidKinderContext.SaveChanges();
             return RedirectToAction("GalleryList");
         }
+
+        public ActionResult ImageStatusForTrue(int id)
+        {
+            var values = kidKinderContext.Galleries.Find(id);
+            values.Statu = true;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("GalleryList");
+        }
+
+        public ActionResult ImageStatusForFalse(int id)
+        {
+            var values = kidKinderContext.Galleries.Find(id);
+            values.Statu = false;
+            kidKinderContext.SaveChanges();
+            return RedirectToAction("GalleryList");
+        }
     }
 }

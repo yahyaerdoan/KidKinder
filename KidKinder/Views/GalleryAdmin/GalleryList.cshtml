@@ -14,11 +14,21 @@
                         <h5>Gallery List</h5>
                         <div class="card-header-right">
                             <ul class="list-unstyled card-option">
-                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                <li><i class="fa fa-trash close-card"></i></li>
+                                <li>
+                                    <i class="fa fa fa-wrench open-card-option"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-window-maximize full-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-minus minimize-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-refresh reload-card"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-trash close-card"></i>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -32,7 +42,8 @@
                                         <th scope="col">Description</th>
                                         <th scope="col">First Image Url</th>
                                         <th scope="col">Second Image Url</th>
-                                        <th scope="col">Statu</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Turn on Or off</th>
                                         <th scope="col">Update</th>
                                         <th scope="col">Delete</th>
                                     </tr>
@@ -46,9 +57,29 @@
                                             <td style="text-align:justify">@item.Description</td>
                                             <td>@item.Image1</td>
                                             <td>@item.Image2</td>
-                                            <td>@item.Statu</td>
-                                            <td><a href="/GalleryAdmin/UpdateGallery/@item.GalleryId" type="button" class="btn btn-outline-success">Update</a></td>
-                                            <td><a href="/GalleryAdmin/DeleteGallery/@item.GalleryId" type="button" class="btn btn-outline-danger">Remove</a></td>
+                                            @if (item.Statu == true)
+                                            {
+                                                <td style="color:green">Active</td>
+                                            }
+                                            else
+                                            {
+                                                <td style="color:red">Passive</td>
+                                            }
+                                            <td>
+                                                <a href="/GalleryAdmin/ImageStatusForTrue/@item.GalleryId" type="button"
+                                                   class="breadcrumb-item">Activate</a> Or
+                                                <a href="/GalleryAdmin/ImageStatusForFalse/@item.GalleryId" type="button"
+                                                   class="crumb-item">Passivate</a>
+                                            </td>
+
+                                            <td>
+                                                <a href="/GalleryAdmin/UpdateGallery/@item.GalleryId" type="button"
+                                                   class="btn btn-outline-success">Update</a>
+                                            </td>
+                                            <td>
+                                                <a href="/GalleryAdmin/DeleteGallery/@item.GalleryId" type="button"
+                                                   class="btn btn-outline-danger">Remove</a>
+                                            </td>
                                         </tr>
                                     }
                                 </tbody>
@@ -61,6 +92,3 @@
         </div>
     </div>
 </div>
-
-
-

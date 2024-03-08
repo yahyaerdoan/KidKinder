@@ -19,16 +19,47 @@ namespace KidKinder.Controllers.AdminController
             ViewBag.AveragaPrice = kidKinderContext.ClassRooms.Average(z => z.Price).ToString("0.00");
 
             ViewBag.TeacherCount = kidKinderContext.Teachers.Count();
+
+            ViewBag.TotalContact = kidKinderContext.Contacts.Count();
+
+            ViewBag.TotalService = kidKinderContext.Services.Count();
+
+            ViewBag.TotalClasses = kidKinderContext.ClassRooms.Count();
+
+            ViewBag.TotalBookASeat = kidKinderContext.BookASeats.Count();
+
+            ViewBag.TotalTestimonial = kidKinderContext.Testimonials.Count();
+
+            ViewBag.TeacherOfThisMonthName = kidKinderContext.Teachers.Where(t => t.TeacherId == 8).Select(t => t.Name).FirstOrDefault();
+            ViewBag.TeacherOfThisMonthSurname = kidKinderContext.Teachers.Where(t => t.TeacherId == 8).Select(t => t.Surname).FirstOrDefault();
+
+            ViewBag.MorePopularBranches = kidKinderContext.Branches.Where(b=> b.BranchId ==1).Select(b=> b.Name).FirstOrDefault();
+
+
             return View();
+        }
+
+        public PartialViewResult TeacherListPartial()
+        {
+            var values = kidKinderContext.Teachers.ToList();
+            return PartialView(values);
         }
 
         public PartialViewResult ClassRoomTeacherChart()
         {
+            ViewBag.TotalTeachers = kidKinderContext.Teachers.Count();
+            ViewBag.TotalClasses = kidKinderContext.ClassRooms.Count();
+            ViewBag.TotalBranches = kidKinderContext.Branches.Count();
+            ViewBag.TotalServices = kidKinderContext.Services.Count();
+            ViewBag.TotalGalleries = kidKinderContext.Galleries.Count();
+
+            //not working
             var values = Json(ClassRoomsAndTeachers(), JsonRequestBehavior.AllowGet);           
             return PartialView(values);
         }
         public List<Teacher> ClassRoomsAndTeachers()
         {
+            //not working
             List<Teacher> teachers = new List<Teacher>();
             var values = kidKinderContext.Teachers.ToList();
             foreach (var item in values)
