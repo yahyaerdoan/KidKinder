@@ -33,7 +33,7 @@ namespace KidKinder.Controllers
 
         public PartialViewResult NotificationPartial()
         {
-            var values = kidKinderContext.Notifications.ToList();
+            var values = kidKinderContext.Notifications.OrderByDescending(n => n.NotificationId).Take(2).ToList();
             return PartialView(values);
         }
 
