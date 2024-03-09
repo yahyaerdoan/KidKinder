@@ -30,8 +30,18 @@ namespace KidKinder.Controllers.AdminController
 
             ViewBag.TotalTestimonial = kidKinderContext.Testimonials.Count();
 
-            ViewBag.TeacherOfThisMonthName = kidKinderContext.Teachers.Where(t => t.TeacherId == 8).Select(t => t.Name).FirstOrDefault();
-            ViewBag.TeacherOfThisMonthSurname = kidKinderContext.Teachers.Where(t => t.TeacherId == 8).Select(t => t.Surname).FirstOrDefault();
+           var TeacherOfThisMonthNameSurname = kidKinderContext.Teachers
+                .Where(teacher => teacher.TeacherId == 8)
+                .Select(teacher =>
+                new
+                {
+                    TeacherName = teacher.Name,
+                    TeacherSurname = teacher.Surname
+                });
+            foreach (var item in TeacherOfThisMonthNameSurname)
+            {
+                ViewBag.TeacherOfThisMonthNameSurname = item.TeacherName + ' ' + item.TeacherSurname;
+            };          
 
             ViewBag.MorePopularBranches = kidKinderContext.Branches.Where(b=> b.BranchId ==1).Select(b=> b.Name).FirstOrDefault();
 
