@@ -41,10 +41,27 @@ namespace KidKinder.Controllers.AdminController
             foreach (var item in TeacherOfThisMonthNameSurname)
             {
                 ViewBag.TeacherOfThisMonthNameSurname = item.TeacherName + ' ' + item.TeacherSurname;
-            };          
+            };
+
+            ViewBag.a = kidKinderContext.Teachers
+                .Where(a => a.TeacherId == 8)
+                .Select(a => a.Name +" "+ a.Surname)
+                .FirstOrDefault();
+
+            ViewBag.b = kidKinderContext.Teachers
+                .Where(a => a.TeacherId == 8)
+                .Select(a=> new {a.Name, a.Surname})
+                .AsEnumerable()
+                .Select(a => a.Name +" "+ a.Surname)
+                .FirstOrDefault();
+
+            ViewBag.c = kidKinderContext.Teachers
+              .Where(a => a.TeacherId == 8)
+              .AsEnumerable()
+              .Select(a => $"{a.Name} {a.Surname}")
+              .FirstOrDefault();
 
             ViewBag.MorePopularBranches = kidKinderContext.Branches.Where(b=> b.BranchId ==1).Select(b=> b.Name).FirstOrDefault();
-
 
             return View();
         }
